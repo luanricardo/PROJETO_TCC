@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<link rel="stylesheet" href="index.css">
+<body>
+      <img class="background-container" src="../assets/teste1.jpeg" />
+
+  <div class="container">
+
+    <video class="input_video"></video>
+
+    <div class="canvas-container">
+      <div class="square top-left-square invisible">
+        <img class="square-image" src="../assets/ground.png" />
+        <p class="square-text top-left-square-text"></p>
+      </div>
+      <div class="square top-right-square invisible">
+        <img class="square-image" src="../assets/ground.png" />
+        <p class="square-text top-right-square-text"></p>
+      </div>
+      <div class="square bottom-left-square invisible">
+        <img class="square-image" src="../assets/ground.png" />
+        <p class="square-text bottom-left-square-text"></p>
+      </div>
+      <div class="square bottom-right-square invisible">
+        <img class="square-image" src="../assets/ground.png" />
+        <p class="square-text bottom-right-square-text"></p>
+      </div>
+
+      <div class="submit invisible"><p class="submit-text">Classificar</p></div>
+
+      <div class="win-game invisible">
+        <h2>VOCÊ VENCEU!</h2>
+        <p class="try-again-description">Deseja tentar novamente?</p>
+        <p>Toque aqui!</p>
+      </div>
+
+      <div class="pass-round-game invisible">
+        <div class="stars">
+          <img class="star star-bottom" src="../assets/star.png" />
+          <img class="star" src="../assets/star.png" />
+          <img class="star star-bottom" src="../assets/star.png" />
+        </div>
+        <p class="pass-round-description">PASSOU!</p>
+
+      </div>
+      <div class="lost-game invisible">
+        <h2 class="lost-game-title">VOCÊ PERDEU!</h2>
+        <p class="try-again-description">Deseja tentar novamente?</p>
+        <p class="wrong-animals"></p>
+        <p>Aperte F5 para reiniciar!</p>
+      </div>
+
+      <div class="help-explanation invisible">
+        <div class="how-to-play">
+          <h2>Como jogar?</h2>
+          <p>
+            Separe os animais de acordo com sua classe. Os animais possuem uma classificação correta por rodada.
+            Utilize o dedo indicador e o polegar para realizar o movimento de pinça, controlar o animal e pressionar botões.
+          </p>
+          <img class="how-to-play-icon" src="../assets/ok.png" /> 
+        </div>
+      </div>
+
+      <div class="dashboard invisible">
+        <h2>Bem Vindo!</h2>
+        <h1>Classificação de animais</h1>
+        <div class="init-button" id="init-button">
+          <p class="init-text">INICIAR</p>
+        </div>
+      </div>
+
+      <div class="loader"></div>
+
+      <canvas class="output_canvas" width="1280px" height="720px">
+    </div>  
+   
+    <div class="hands-view invisible">  
+      
+      <div class="enable-hands invisible">
+        <div class="hand-icon-container">
+        <i class="far fa-hand-point-right hand-icon"></i>
+      </div>
+        <p>Toque aqui!</p>
+      </div>
+
+    
+
+    
+      
+    </div>
+
+
+    <div class="round invisible">
+      <h2>Rodada <h2 id="round">1</h2></h2>
+    </div>
+
+    <div class="game invisible">
+      <div class="game-content">
+        <div class="clickable top-left-corner" id="top-left-corner"></div>
+        <div class="clickable top-right-corner" id="top-right-corner"></div>
+        <div class="clickable bottom-left-corner" id="bottom-left-corner"></div>
+        <div class="clickable bottom-right-corner" id="bottom-right-corner"></div>
+      </div>
+
+      <div class="game-content1 invisible">
+        <div class="clickable square" id="first-square"></div>
+        <div class="clickable square" id="second-square"></div>
+        <div class="clickable square" id="third-square"></div>
+        <div class="clickable square" id="fourth-square"></div>
+        <div class="clickable square" id="fifth-square"></div>
+
+      </div>
+    </div>
+
+
+   
+
+  
+</div>
+  
+  <script src="index.js" type="module"></script>
+</body>
+</html>
+
